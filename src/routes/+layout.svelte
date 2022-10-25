@@ -10,7 +10,7 @@
 </main>
 
 <footer>
-	<p class="text-3xl font-bold underline">visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+	
 </footer>
 
 <style>
@@ -18,9 +18,9 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
+	
 		width: 100%;
-		max-width: 1024px;
+		height: 100vh;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
