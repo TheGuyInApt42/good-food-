@@ -5,10 +5,10 @@
 	import HeroImage from '$lib/components/hero-image/HeroImage.svelte';
 	// Start: Local component properties
 	const metaData = {
-		title: `PlayNTrade | Home`,
+		title: `Good Food | Home`,
 		description:
 			'Sveltekit starter project created with sveltekit, typescript, tailwindcss, postcss, husky, and storybook. The project has the structure set up for the scaleable project. (sveltekit, typescript, tailwindcss, postcss, husky, Storybook).',
-		keywords: ['playntrade', 'trade video games', 'video games', 'buy video games'],
+		keywords: ['food', 'good food', 'good eating'],
 	};
 </script>
 

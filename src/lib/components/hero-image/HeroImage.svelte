@@ -24,6 +24,8 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+	@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 
     /* The hero image */
 .hero-image {
@@ -57,7 +59,7 @@
 	text-transform: uppercase;
 	text-align: center;
 	padding: 0 0 200px;
-		font-family: 'Lato', sans-serif;
+	font-family: 'Pacifico', cursive;
 	font-size: 14px;
 
 	word-wrap:break-word;
