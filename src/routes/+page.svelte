@@ -1,8 +1,8 @@
 <script>
 	// Components
 	import HeadTags from '$lib/components/head-tags/HeadTags.svelte';
-	import Counter from '$lib/Counter.svelte';
 	import HeroImage from '$lib/components/hero-image/HeroImage.svelte';
+	import TwoCol from '../lib/components/two-col/TwoCol.svelte';
 	// Start: Local component properties
 	const metaData = {
 		title: `Good Food | Home`,
@@ -19,6 +19,7 @@
 <section>
 	<HeroImage text={'Good Food'}/>
 </section>
+<TwoCol title='menu' textHeader='Menu' text='A progression of rare and beautiful ingredients where texture, flavour and harmony is paramount. Delve into the Quay dining experience with Peter Gilmore’s Menu and thoughtfully curated Wine List by Fink Wine Director, Amanda Yallop.' />
 
 <style>
 	section {
