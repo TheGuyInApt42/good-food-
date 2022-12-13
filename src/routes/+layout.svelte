@@ -4,16 +4,20 @@
 	//TODO: https://www.quay.com.au/ 
 </script>
 
-<Header />
+
+<div class="flex flex-col">
+	<Header />
 
 
-<main>
-	<slot />
-</main>
+	<main>
+		<slot />
+	</main>
 
-<footer>
-	
-</footer>
+	<footer>
+		
+	</footer>
+</div>
+
 
 <style>
 	main {

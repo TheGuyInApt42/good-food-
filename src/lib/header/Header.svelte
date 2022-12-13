@@ -21,8 +21,14 @@
 			<li class:active={$page.url.pathname === '/about'}>
 				<a href="/about">About</a>
 			</li>
-			<li class:active={$page.url.pathname === '/todos'}>
-				<a href="/todos">Todos</a>
+			<li class:active={$page.url.pathname === '/menu'}>
+				<a href="/menu">Menu</a>
+			</li>
+			<li class:active={$page.url.pathname === '/contact'}>
+				<a href="/contact">Contact</a>
+			</li>
+			<li class:active={$page.url.pathname === '/order'}>
+				<a href="/order">Order Online</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">

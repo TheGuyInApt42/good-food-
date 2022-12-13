@@ -33,7 +33,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://th.bing.com/th/id/R.6d4491c4d0b3fb270e12d33904323c9f?rik=N6%2bWgpyjTAxPMw&riu=http%3a%2f%2fwww.presagepro.com%2fsy-photos%2f2014%2f08%2f22%2f16%2flarge_1d83f2a22_JAK_8210Sized.jpg&ehk=%2b7dnbbeS5yWi6CStoMt6hZqwuugiTasxHkNA0DtF5II%3d&risl=&pid=ImgRaw&r=0");
 
     width: 100%;
-  height: 100%;
+  height: 100vh;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;

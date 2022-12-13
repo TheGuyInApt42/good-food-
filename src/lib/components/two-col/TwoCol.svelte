@@ -3,6 +3,8 @@
     export let textHeader = ''
     export let text = ''
     export let imageOnRight = true;
+    export let btnText = ''
+    //TODO: https://stackoverflow.com/questions/25839487/auto-scroll-to-next-anchor-at-mouse-wheel 
 </script>
 
 <style>
@@ -13,13 +15,16 @@
     }
 </style>
 
-<section id={title} class="grid grid-cols-2 h-[900px] w-screen">
-    <div class="text {imageOnRight ? 'col-start-1' : 'col-start-2'} w-50%">
-        <h2>{textHeader}</h2>
-        <p>{text}</p>
-        <a href="#">View Menu</a>
+<section id={title} class="flex h-[900px] w-screen">
+    <div class="text-container {imageOnRight ? 'order-1' : 'order-2'} h-screen flex justify-center items-center flex-col w-1/2">
+        <div class="text-content w-[85%]">
+            <h2 class="text-[50px]">{textHeader}</h2>
+            <p>{text}</p>
+            <a href="#">{btnText}</a>
+        </div>
+        
     </div>
 
-    <div class="image {imageOnRight ? 'col-start-2' : 'col-start-1'} bg-cover bg-no-repeat bg-center bg-top w-[50vw]">
+    <div class="image {imageOnRight ? 'order-2' : 'order-1'} bg-cover bg-no-repeat bg-center bg-top w-1/2 ">
     </div>
 </section>
