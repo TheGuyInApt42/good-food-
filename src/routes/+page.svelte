@@ -16,7 +16,7 @@
 <HeadTags metaData="{metaData}" />
 <!-- End: Header Tag -->
 
-<section>
+<section class="active">
 	<HeroImage text={'Good Food'}/>
 </section>
 <TwoCol 
@@ -29,11 +29,20 @@
 />
 
 <TwoCol 
+	title='about' 
+	textHeader='About Us' 
+	text='Peter’s appreciation of nature’s diversity and his endless experimentation in the kitchen and garden 
+		are the driving forces in his cooking. Peter leads the Quay team with a focus on excellence, innovation and hospitality.' 
+	imageOnRight={false}
+	btnText='Learn More'
+/>
+
+<TwoCol 
 	title='owner' 
 	textHeader='Ralph Gorham' 
 	text='Peter’s appreciation of nature’s diversity and his endless experimentation in the kitchen and garden 
 		are the driving forces in his cooking. Peter leads the Quay team with a focus on excellence, innovation and hospitality.' 
-	imageOnRight={false}
+	imageOnRight={true}
 	btnText='Read More'
 />
 
