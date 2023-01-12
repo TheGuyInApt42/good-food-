@@ -1,12 +1,13 @@
 <script>
 	import { page } from '$app/stores';
 	import logo from './svelte-logo.svg';
+	import l from './bananatastic.png'
 </script>
 
 <header>
 	<div class="corner">
 		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+			<img src={l} alt="SvelteKit" />
 		</a>
 	</div>
 
@@ -27,17 +28,22 @@
 			<li class:active={$page.url.pathname === '/contact'}>
 				<a href="/contact">Contact</a>
 			</li>
-			<li class:active={$page.url.pathname === '/order'}>
+			<!-- <li class:active={$page.url.pathname === '/order'}>
 				<a href="/order">Order Online</a>
-			</li>
+			</li> -->
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
 		</svg>
 	</nav>
 
-	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+	<div>
+		<ul>
+			<li class:active={$page.url.pathname === '/order'} 
+				class="flex items-center justify-center">
+				<a href="/order" class="order">Order Online</a>
+			</li>
+		</ul>
 	</div>
 </header>
 
@@ -46,6 +52,9 @@
 		display: flex;
 		justify-content: space-between;
 		background-color: black;
+		width: 100%;
+		z-index: 1;
+		position: fixed;
 	}
 
 	.corner {
@@ -62,15 +71,18 @@
 	}
 
 	.corner img {
-		width: 2em;
+		position: relative;
+		left: 175%;
+		width: 250em;
 		height: 2em;
 		object-fit: contain;
+		max-width: none;
 	}
 
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: transparent;
 	}
 
 	svg {
@@ -92,7 +104,7 @@
 		justify-content: center;
 		align-items: center;
 		list-style: none;
-		background: var(--background);
+		background: var(--heading-color);
 		background-size: contain;
 	}
 
@@ -118,7 +130,8 @@
 		height: 100%;
 		align-items: center;
 		padding: 0 1em;
-		color: var(--heading-color);
+		color: var(--pure-white);
+		
 		font-weight: 700;
 		font-size: 0.8rem;
 		text-transform: uppercase;
@@ -129,5 +142,19 @@
 
 	a:hover {
 		color: var(--accent-color);
+	}
+
+	.order{
+		position: relative;
+		right: 20%;
+		padding: 0.25em 1em;
+		color: var(--pure-white);
+		border: 1px solid var(--pure-white);
+		font-weight: 700;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		text-decoration: none;
+		transition: color 0.2s linear;
 	}
 </style>

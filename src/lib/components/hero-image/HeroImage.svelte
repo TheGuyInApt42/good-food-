@@ -1,9 +1,11 @@
 <script>
     export let text = '';
+	
 
 </script>
 
 <div class="hero-image">
+	
     <div class="hero-text">
         <div class="container">
             <div class="animate seven">
@@ -40,6 +42,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
 }
 
 /* Place text in the middle of the image */

@@ -182,8 +182,6 @@
 
 <div class="flex flex-col">
 	<Header />
-
-
 	<main on:wheel={e=> autoscroll(e)}>
 		<slot />
 	</main>
