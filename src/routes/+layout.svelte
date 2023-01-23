@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import Header from '$lib/header/Header.svelte';
+	import  SimpleFooter  from 'gorham-component-library/components/simple-footer/SimpleFooter.svelte'
 	
 	import '../app.css';
 
@@ -88,15 +89,15 @@
 		}
 		else{
 			//scroll to top
-			current = document.querySelector(`section[data-index='0']`)
+			/* current = document.querySelector(`section[data-index='0']`)
 			pos = 0
 			current.scrollIntoView({
 				behavior: 'smooth'
-			}) 
+			})  
 			for (let i = 0; i < sections.length; i++){
 				removeClass(sections[i], 'active')
 			}
-			addClass(current, 'active')
+			addClass(current, 'active') */
 			
 		}
 		let next_index = next.dataset.index;
@@ -109,7 +110,7 @@
 		current = document.querySelector('section.active')
 		index = current.dataset.index
 		next = document.querySelector(`section[data-index='${parseInt(index) - 1}']`)
-		console.log(next);
+		console.log(next, index);
 		let sections = document.querySelectorAll('section')
 		let total = sections.length
 
@@ -122,7 +123,7 @@
 			removeClass(current, 'active')
 		}
 		else{
-			//scroll to top
+			/* //scroll to top
 			current = document.querySelector(`section[data-index='0']`)
 			current.scrollIntoView({
 				behavior: 'smooth'
@@ -130,7 +131,7 @@
 			for (let i = 0; i < sections.length; i++){
 				removeClass(sections[i], 'active')
 			}
-			addClass(current, 'active')
+			addClass(current, 'active') */
 			
 		}
 
@@ -148,20 +149,7 @@
 			moveUp()
 		} else {
 			moveDown()
-		}
-		
-		/* start = event.layerY
-
-		if (start > move){
-			moveDown()
-			console.log('scroll down');
-		}
-		else if(start < move){
-			moveUp()
-			console.log('scroll up');
-		}
-		else console.log('same');
-		move = start */
+		} 
 	}
 	
 
@@ -186,9 +174,7 @@
 		<slot />
 	</main>
 
-	<footer>
-		
-	</footer>
+	<SimpleFooter />
 </div>
 
 
