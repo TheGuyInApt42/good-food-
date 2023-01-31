@@ -12,6 +12,7 @@
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.4.8",
+		"gorham-component-library": "^0.0.4",
 		"postcss": "^8.4.16",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
@@ -23,7 +24,6 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
-		"cookie": "^0.4.1",
-		"gorham-component-library": "^0.0.2"
+		"cookie": "^0.4.1"
 	}
 }

@@ -2,6 +2,7 @@
 	// Components
 	import HeadTags from '$lib/components/head-tags/HeadTags.svelte';
 	import TwoCol from '$lib/components/two-col/TwoCol.svelte'
+	import SimpleTabs from 'gorham-component-library/components/simple-tabs/SimpleTabs.svelte';
 
 	// Start: Local component properties
 	const metaData = {
@@ -11,6 +12,13 @@
 		keywords: ['about', 'about good food', 'good food story'],
 		content : 'About Good Food'
 	};
+
+	const menuContent = [
+		{text: 'test1', type: 'Lunch'},
+        {text: 'test2', type: 'Dinner'},
+		{text: 'test23', type: 'Dessert'}
+
+	]
 
 	// NOTE: https://beyondsushi.com/#menu
 	//NOTE: https://www.bengaltigerindianfood.com/
@@ -38,7 +46,12 @@ We invite you to come and experience the delicious flavors of Banana Bistro. Whe
 />
 
 
-<div class="content">
+<section>
+	<SimpleTabs tabContent={menuContent}/>
+</section>
+
+
+<!-- <div class="content">
 	
 	<h1>About this app</h1>
 
@@ -59,7 +72,7 @@ We invite you to come and experience the delicious flavors of Banana Bistro. Whe
 		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
 		it with JavaScript disabled!
 	</p>
-</div>
+</div> -->
 
 <style>
 	.content {
