@@ -1,11 +1,27 @@
 <script>
 	import { onMount } from 'svelte';
 	import Header from '$lib/header/Header.svelte';
-	import  SimpleFooter  from 'gorham-component-library/components/simple-footer/SimpleFooter.svelte'
+	import  ContactFooter from '$lib/components/contact-footer/ContactFooter.svelte'
 	
 	import '../app.css';
 
 	//NOTE: https://www.quay.com.au/ 
+
+	let address = `<p>343 S 2nd Ave</p>
+                    <p>Mount Vernon, NY 10550</p>            
+                    <a href="tel:9144194033">Tel: (914)419-4033</a>`
+
+
+
+	let hours = `<p data-id="1">Mon. 	11:30am – 2:45pm & 5pm – 10pm</p>
+        <p data-id="2">Tue. 	11:30am – 2:45pm & 5pm – 10pm</p>
+            <p data-id="3">Wed. 	11:30am – 2:45pm & 5pm – 10pm</p>
+                <p data-id="4">Thu. 	11:30am – 2:45pm & 5pm – 10pm</p>
+                    <p data-id="5">Fri. 	11:30am – 2:45pm & 5pm – 10pm</p>
+                        <p data-id="6">Sat. 	12pm – 10pm</p>
+                            <p data-id="0">Sun. 	12pm – 10pm</p>
+
+                                <p>Holidays:   11:30am – 10pm</p>`
 
 
 	let start = 0
@@ -174,7 +190,7 @@
 		<slot />
 	</main>
 
-	<SimpleFooter />
+	<ContactFooter address={address} hours={hours}/>
 </div>
 
 

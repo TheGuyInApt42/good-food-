@@ -57,15 +57,16 @@ h1,
 h2,
 p {
 	font-weight: 400;
-	color: var(--heading-color);
 }
+
+
 
 p {
 	line-height: 1.5;
 }
 
 a {
-	color: var(--accent-color);
+	/* color: var(--accent-color); */
 	text-decoration: none;
 }
 

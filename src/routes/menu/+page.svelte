@@ -2,7 +2,8 @@
 	// Components
 	import HeadTags from '$lib/components/head-tags/HeadTags.svelte';
 	import TwoCol from '$lib/components/two-col/TwoCol.svelte'
-	import SimpleTabs from 'gorham-component-library/components/simple-tabs/SimpleTabs.svelte';
+	import Tabs from './components/tabs/Tabs.svelte'
+
 
 	// Start: Local component properties
 	const metaData = {
@@ -19,6 +20,107 @@
 		{text: 'test23', type: 'Dessert'}
 
 	]
+
+
+	let menu = [
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Duck Confit Tacos',
+            price: 11,
+            description: 'Chihuahua cheese, avocado, cilantro, pickled onions'
+        },
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Duck Confit Tacos',
+            price: 11,
+            description: 'Chihuahua cheese, avocado, cilantro, pickled onions'
+        },
+    ]
+
+    let dessert = [
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Duck Confit Tacos',
+            price: 11,
+            description: 'Chihuahua cheese, avocado, cilantro, pickled onions'
+        }
+     
+    ]
+    let dinner = [
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Good Burger',
+            price: 12,
+            description: 'Delicious Burger with Cheese, Bacon, Lettuce, Tomatoes and Pickles'
+        },
+        {
+            name: 'Duck Confit Tacos',
+            price: 11,
+            description: 'Chihuahua cheese, avocado, cilantro, pickled onions'
+        }
+     
+    ]
+
+	let menus = [
+        {
+            title: 'Lunch',
+            content: menu
+        },
+        {
+            title: 'Dessert',
+            content: dessert
+        },
+        {
+            title: 'Dinner',
+            content: dinner
+        }
+    ]
 
 	// NOTE: https://beyondsushi.com/#menu
 	//NOTE: https://www.bengaltigerindianfood.com/
@@ -47,7 +149,7 @@ We invite you to come and experience the delicious flavors of Banana Bistro. Whe
 
 
 <section>
-	<SimpleTabs tabContent={menuContent}/>
+	<Tabs list={menus} buttonStyle={'filterBtn'}/>
 </section>
 
 
