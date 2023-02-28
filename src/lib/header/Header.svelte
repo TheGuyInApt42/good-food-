@@ -25,8 +25,11 @@
 			<li class:active={$page.url.pathname === '/menu'}>
 				<a href="/menu">Menu</a>
 			</li>
-			<li class:active={$page.url.pathname === '/contact'}>
-				<a href="/contact">Contact</a>
+			<li class:active={$page.url.pathname === '/gallery'}>
+				<a href="/gallery">Gallery</a>
+			</li>
+			<li class:active={$page.url.pathname === '#contact'}>
+				<a href="#contact">Contact</a>
 			</li>
 			<!-- <li class:active={$page.url.pathname === '/order'}>
 				<a href="/order">Order Online</a>

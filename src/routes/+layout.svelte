@@ -184,7 +184,7 @@
 </script>
 
 
-<div class="flex flex-col">
+<div class="flex flex-col scroll-smooth">
 	<Header />
 	<main on:wheel={e=> autoscroll(e)}>
 		<slot />

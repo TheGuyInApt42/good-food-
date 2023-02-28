@@ -13,7 +13,7 @@
   export const ulClasses = {
     default: 'flex flex-wrap -mb-px',
     underline: 'flex flex-wrap -mb-px',
-    filterBtn: 'flex flex-wrap -mb-px'
+    filterBtn: 'flex justify-center -mb-px'
   }
 </script>
   

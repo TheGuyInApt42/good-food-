@@ -148,7 +148,7 @@ We invite you to come and experience the delicious flavors of Banana Bistro. Whe
 />
 
 
-<section>
+<section class="mt-20">
 	<Tabs list={menus} buttonStyle={'filterBtn'}/>
 </section>
 
