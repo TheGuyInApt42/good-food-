@@ -7,6 +7,10 @@
 
 	//NOTE: https://www.quay.com.au/ 
 
+	const select = (selector, scope = document) => {
+		return scope.querySelector(selector)
+	}
+
 	let address = `<p>343 S 2nd Ave</p>
                     <p>Mount Vernon, NY 10550</p>            
                     <a href="tel:9144194033">Tel: (914)419-4033</a>`
@@ -87,9 +91,9 @@
 
 
 	const moveDown = () =>{
-		current = document.querySelector('section.active')
+		current = select('section.active')
 		index = current.dataset.index
-		next = document.querySelector(`section[data-index='${parseInt(index) + 1}']`)
+		next = select(`section[data-index='${parseInt(index) + 1}']`)
 		//console.log(next);
 		let sections = document.querySelectorAll('section')
 		
@@ -123,10 +127,10 @@
 	}
 
 	const moveUp = () =>{
-		current = document.querySelector('section.active')
+		current = select('section.active')
 		index = current.dataset.index
-		next = document.querySelector(`section[data-index='${parseInt(index) - 1}']`)
-		console.log(next, index);
+		next = select(`section[data-index='${parseInt(index) - 1}']`)
+
 		let sections = document.querySelectorAll('section')
 		let total = sections.length
 

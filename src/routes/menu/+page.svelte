@@ -21,6 +21,9 @@
 
 	]
 
+    const { log } = console;
+    log('hello')
+
 
 	let menu = [
         {
