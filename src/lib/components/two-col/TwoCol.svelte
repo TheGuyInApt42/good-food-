@@ -20,7 +20,10 @@
         <div class="text-content w-[85%]">
             <h2 class="text-[50px]">{textHeader}</h2>
             <p class="mb-2">{text}</p>
-            <a class="mt-6 px-10 py-2 border border-black" href="#">{btnText}</a>
+            {#if btnText}
+                <a class="mt-6 px-10 py-2 border border-black" href="#">{btnText}</a>
+            {/if}
+            
         </div>
         
     </div>

@@ -10,7 +10,7 @@
 </script>
 
 <footer class="flex flex-col justify-center w-full bg-black text-center py-5 gap-6 scroll-smooth">
-    <div id="contact" class="flex">
+    <div id="contact" class="flex flex-col gap-4 md:flex-row md:gap-0">
         <div id="address" class="flex-1 text-gray-400">
             <h4 class="font-bold pb-4">Visit Us</h4>
             <slot>{@html address}</slot>

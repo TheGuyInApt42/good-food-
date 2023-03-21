@@ -21,7 +21,7 @@
   <TabWrapper let:buttonStyle>
     <TabHead {buttonStyle}>
       {#each list as item, i}
-        <TabHeadItem id={i+1} tabStyle={'filterBtn'} on:click={handleClick(i+1)}>{item.title}</TabHeadItem>
+        <TabHeadItem id={i+1} tabStyle={'filterBtn'} on:click={handleClick(i+1)} >{item.title}</TabHeadItem>
       {/each}
    </TabHead>
    {#each list as item, i}

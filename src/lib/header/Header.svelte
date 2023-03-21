@@ -1,10 +1,74 @@
 <script>
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 	import logo from './svelte-logo.svg';
 	import l from './bananatastic.png'
+
+	let menu;
+
+	onMount(async() =>{
+		menu = document.querySelector('#menu')
+
+	})
+
+
+
+	function toggleMenu(){
+		menu.classList.toggle('hidden')
+		menu.classList.toggle('w-full')
+		menu.classList.toggle('h-screen')
+	}
 </script>
 
-<header>
+
+<header class="w-full h-16 drop-shadow-lg bg-black">
+	<div class="container px-4 md:px-0 h-full mx-auto flex justify-between items-center">
+		<!-- Logo Here -->
+		<a class="text-yellow-400 text-xl font-bold italic md:z-0 z-50" href="/">GOOD<span
+				class="text-white">FOOD</span></a>
+
+		<nav data-sveltekit-prefetch>
+
+			<!-- Menu links here -->
+			<ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-40
+				md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+
+				<li class="md:hidden z-90 fixed top-4 right-6">
+					<a href="#" class="text-right text-white text-4xl"
+						on:click={toggleMenu}>&times;</a>
+				</li>
+
+				<li class:active={$page.url.pathname === '/'}>
+					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/">Home</a>
+				</li>
+				<li class:active={$page.url.pathname === '/about'}>
+					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/about">About</a>
+				</li>
+				<li class:active={$page.url.pathname === '/menu'}>
+					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/menu">Menu</a>
+				</li>
+
+				<li class:active={$page.url.pathname === '/gallery'}>
+					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/gallery">Gallery</a>
+				</li>
+				<li class:active={$page.url.pathname === '#contact'}>
+					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="#contact">Contact</a>
+				</li>
+			</ul>
+
+		</nav>
+
+		<!-- This is used to open the menu on mobile devices -->
+		<div class="flex items-center md:hidden">
+			<button class="text-white text-4xl font-bold opacity-70 hover:opacity-100 duration-300"
+				on:click={toggleMenu}>
+				&#9776;
+			</button>
+		</div>
+
+</header>
+
+<!-- <header>
 	<div class="corner">
 		<a href="https://kit.svelte.dev">
 			<img src={l} alt="SvelteKit" />
@@ -15,25 +79,28 @@
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
-		<ul>
+		<ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 z-50 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+			<li class="md:hidden z-90 fixed top-4 right-6">
+				<a href="#" class="text-right text-white text-4xl"
+				on:click={toggleMenu}>&times;</a>
+			</li>
+			
 			<li class:active={$page.url.pathname === '/'}>
-				<a href="/">Home</a>
+				<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/">Home</a>
 			</li>
 			<li class:active={$page.url.pathname === '/about'}>
-				<a href="/about">About</a>
+				<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/about">About</a>
 			</li>
 			<li class:active={$page.url.pathname === '/menu'}>
-				<a href="/menu">Menu</a>
+				<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/menu">Menu</a>
 			</li>
 			<li class:active={$page.url.pathname === '/gallery'}>
-				<a href="/gallery">Gallery</a>
+				<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/gallery">Gallery</a>
 			</li>
 			<li class:active={$page.url.pathname === '#contact'}>
-				<a href="#contact">Contact</a>
+				<a class="text-white opacity-70 hover:opacity-100 duration-300" href="#contact">Contact</a>
 			</li>
-			<!-- <li class:active={$page.url.pathname === '/order'}>
-				<a href="/order">Order Online</a>
-			</li> -->
+		
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
@@ -48,9 +115,16 @@
 			</li>
 		</ul>
 	</div>
-</header>
+	<div class="flex items-center md:hidden">
+		<div class="space-y-2">
+			<div class="w-8 h-0.5 bg-gray-600"></div>
+			<div class="w-8 h-0.5 bg-gray-600"></div>
+			<div class="w-8 h-0.5 bg-gray-600"></div>
+		</div>
+	</div>
+</header> -->
 
-<style>
+<!-- <style>
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -161,3 +235,4 @@
 		transition: color 0.2s linear;
 	}
 </style>
+ -->
