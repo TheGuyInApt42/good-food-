@@ -13,10 +13,31 @@
         background: url("https://www.washingtonpost.com/resizer/ZUrlI2mJsVl7uHWmmyFKiJJ7Y7Y=/1440x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FDFHHRVMNQ2JXFMPYNW3B3IYY4.jpg");
         
     }
+
+    @media screen and (max-width: 1023px){
+        section{
+            height: auto;
+            flex-direction: column;
+        }
+
+        .image{
+            order: unset;
+            height: 400px;
+            background-size: cover;
+        }
+    }
+
+
+    @media screen and (max-width: 767px){
+        .image{
+            height: 250px;
+
+        }
+    }
 </style>
 
 <section id={title} class="flex h-[900px] w-screen">
-    <div class="text-container {imageOnRight ? 'order-1' : 'order-2'} h-screen flex justify-center items-center flex-col w-1/2">
+    <div class="text-container {imageOnRight ? 'order-1' : 'order-2'} lg:h-screen flex justify-center items-center flex-col lg:w-1/2 py-8 lg:py-0">
         <div class="text-content w-[85%]">
             <h2 class="text-[50px]">{textHeader}</h2>
             <p class="mb-2">{text}</p>
@@ -28,6 +49,6 @@
         
     </div>
 
-    <div class="image {imageOnRight ? 'order-2' : 'order-1'} bg-cover bg-no-repeat bg-center bg-top w-1/2 ">
+    <div class="image {imageOnRight ? 'order-2' : 'order-1'} bg-cover bg-no-repeat bg-center bg-top lg:w-1/2 ">
     </div>
 </section>

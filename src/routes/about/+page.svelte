@@ -31,12 +31,3 @@ Our chefs are passionate about creating unique and flavorful dishes that will ta
 We invite you to come and experience the delicious flavors of Banana Bistro. Whether you’re looking for a quick lunch or a romantic dinner, we have something for everyone. We look forward to serving you soon!' 
 	btnText='Read More'
 />
-
-
-<style>
-	.content {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
-	}
-</style>

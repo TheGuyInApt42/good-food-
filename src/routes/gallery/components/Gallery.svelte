@@ -6,7 +6,7 @@
 <div class="container">
 	<h2 class="heading-text">{title1} <span>{title2}</span></h2>
 
-	<ul class="image-gallery">
+	<ul class="image-gallery relative -z-10 md:static md:z-0">
 		{#each images as image}
 			<li>
 				<img src={image.src} alt={image.alt} />

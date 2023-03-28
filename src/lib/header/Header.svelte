@@ -5,19 +5,32 @@
 	import l from './bananatastic.png'
 
 	let menu;
+	let mobile = false;
+
 
 	onMount(async() =>{
 		menu = document.querySelector('#menu')
+		const mobileDevice = window.matchMedia('(max-width: 768px)');
+		mobileDevice.addEventListener('change', handleDeviceChange);
+		function handleDeviceChange(e) {
+			if (e.matches) mobile = true;
+			else mobile = false;
+		}
+		// Run it initially
+		handleDeviceChange(mobileDevice);
 
 	})
 
 
 
 	function toggleMenu(){
-		menu.classList.toggle('hidden')
-		menu.classList.toggle('w-full')
-		menu.classList.toggle('h-screen')
+		if (mobile){
+			menu.classList.toggle('hidden')
+			menu.classList.toggle('w-full')
+			menu.classList.toggle('h-screen')
+		}
 	}
+
 </script>
 
 
@@ -39,20 +52,20 @@
 				</li>
 
 				<li class:active={$page.url.pathname === '/'}>
-					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/">Home</a>
+					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/" on:click={toggleMenu}>Home</a>
 				</li>
 				<li class:active={$page.url.pathname === '/about'}>
-					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/about">About</a>
+					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/about" on:click={toggleMenu}>About</a>
 				</li>
 				<li class:active={$page.url.pathname === '/menu'}>
-					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/menu">Menu</a>
+					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/menu" on:click={toggleMenu}>Menu</a>
 				</li>
 
 				<li class:active={$page.url.pathname === '/gallery'}>
-					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/gallery">Gallery</a>
+					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/gallery" on:click={toggleMenu}>Gallery</a>
 				</li>
 				<li class:active={$page.url.pathname === '#contact'}>
-					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="#contact">Contact</a>
+					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="#contact" on:click={toggleMenu}>Contact</a>
 				</li>
 			</ul>
 
@@ -60,7 +73,7 @@
 
 		<!-- This is used to open the menu on mobile devices -->
 		<div class="flex items-center md:hidden">
-			<button class="text-white text-4xl font-bold opacity-70 hover:opacity-100 duration-300"
+			<button class="text-white text-4xl font-bold opacity-70 hover:opacity-100 duration-300 fixed top-4 right-6"
 				on:click={toggleMenu}>
 				&#9776;
 			</button>
