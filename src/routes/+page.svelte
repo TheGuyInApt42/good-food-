@@ -1,5 +1,6 @@
 <script>
 	// Components
+	import { Alert } from 'flowbite-svelte';
 	import HeadTags from '$lib/components/head-tags/HeadTags.svelte';
 	import HeroImage from '$lib/components/hero-image/HeroImage.svelte';
 	import TwoCol from '../lib/components/two-col/TwoCol.svelte';
@@ -26,6 +27,7 @@
 		Delve into the Quay dining experience with Peter Gilmore’s Menu and thoughtfully curated Wine List by Fink Wine Director, 
 		Amanda Yallop.' 
 	btnText='View Menu'
+	link='/menu'
 />
 
 <TwoCol 
@@ -35,6 +37,7 @@
 		are the driving forces in his cooking. Peter leads the Quay team with a focus on excellence, innovation and hospitality.' 
 	imageOnRight={false}
 	btnText='Learn More'
+	link='/about'
 />
 
 <TwoCol 
@@ -45,6 +48,12 @@
 	imageOnRight={true}
 	btnText='Read More'
 />
+
+<div class="p-8">
+	<Alert>
+		<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+	</Alert>
+</div>
 
 
 <style>

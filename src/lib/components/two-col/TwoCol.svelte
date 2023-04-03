@@ -4,6 +4,7 @@
     export let text = ''
     export let imageOnRight = true;
     export let btnText = ''
+    export let link = ''
     //TODO: https://stackoverflow.com/questions/25839487/auto-scroll-to-next-anchor-at-mouse-wheel 
 </script>
 
@@ -42,7 +43,7 @@
             <h2 class="text-[50px]">{textHeader}</h2>
             <p class="mb-2">{text}</p>
             {#if btnText}
-                <a class="mt-6 px-10 py-2 border border-black" href="#">{btnText}</a>
+                <a class="mt-6 px-10 py-2 border border-black" href={link}>{btnText}</a>
             {/if}
             
         </div>

@@ -19,7 +19,7 @@
   </script>
   
   <TabWrapper let:buttonStyle>
-    <TabHead {buttonStyle}>
+    <TabHead >
       {#each list as item, i}
         <TabHeadItem id={i+1} tabStyle={'filterBtn'} on:click={handleClick(i+1)} >{item.title}</TabHeadItem>
       {/each}

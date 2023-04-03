@@ -35,7 +35,7 @@
 
 
 <header class="w-full h-16 drop-shadow-lg bg-black">
-	<div class="container px-4 md:px-0 h-full mx-auto flex justify-between items-center">
+	<div class="container lg:px-4 md:px-0 h-full mx-auto flex justify-between items-center px-4">
 		<!-- Logo Here -->
 		<a class="text-yellow-400 text-xl font-bold italic md:z-0 z-50" href="/">GOOD<span
 				class="text-white">FOOD</span></a>

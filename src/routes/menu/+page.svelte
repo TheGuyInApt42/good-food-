@@ -3,6 +3,7 @@
 	import HeadTags from '$lib/components/head-tags/HeadTags.svelte';
 	import TwoCol from '$lib/components/two-col/TwoCol.svelte'
 	import Tabs from './components/tabs/Tabs.svelte'
+    
 
 
 	// Start: Local component properties
@@ -153,3 +154,4 @@ We invite you to come and experience the delicious flavors of Banana Bistro. Whe
 <section class="mt-20">
 	<Tabs list={menus} buttonStyle={'filterBtn'}/>
 </section>
+
