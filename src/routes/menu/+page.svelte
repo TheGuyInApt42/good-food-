@@ -156,7 +156,7 @@ We invite you to come and experience the delicious flavors of Banana Bistro. Whe
 
 <section class="mt-20">
 	<!-- <Tabs list={menus} buttonStyle={'filterBtn'}/> -->
-    <Tabs style="pill" defaultClass='items-center justify-center w-full flex' >
+    <Tabs style="pill" defaultClass='items-center justify-center w-full flex' contentClass='p-4 rounded-lg mt-4' >
         {#each menus as menu, index}
             {#if index == 0}
                 <TabItem open>
