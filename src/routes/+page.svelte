@@ -10,6 +10,10 @@
 			'Sveltekit starter project created with sveltekit, typescript, tailwindcss, postcss, husky, and storybook. The project has the structure set up for the scaleable project. (sveltekit, typescript, tailwindcss, postcss, husky, Storybook).',
 		keywords: ['food', 'good food', 'good eating'],
 	};
+
+	//TODO: add ordering system e.g. https://www.youtube.com/watch?v=Z-hACIsjv4E
+	// https://dev.to/stripe/sky-cart-an-open-source-cloud-agnostic-shopping-cart-using-stripe-checkout-o5k
+	// https://github.com/vercel/sveltekit-commerce
 </script>
 
 <!-- Start: Header Tag -->
