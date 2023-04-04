@@ -1,6 +1,5 @@
 <script>
 	// Components
-	import { Alert } from 'flowbite-svelte';
 	import HeadTags from '$lib/components/head-tags/HeadTags.svelte';
 	import HeroImage from '$lib/components/hero-image/HeroImage.svelte';
 	import TwoCol from '../lib/components/two-col/TwoCol.svelte';
@@ -48,12 +47,6 @@
 	imageOnRight={true}
 	btnText='Read More'
 />
-
-<div class="p-8">
-	<Alert>
-		<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
-	</Alert>
-</div>
 
 
 <style>

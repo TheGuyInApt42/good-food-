@@ -1,8 +1,11 @@
 <script>
 	// Components
+    import { Tabs, TabItem } from 'flowbite-svelte';
 	import HeadTags from '$lib/components/head-tags/HeadTags.svelte';
 	import TwoCol from '$lib/components/two-col/TwoCol.svelte'
-	import Tabs from './components/tabs/Tabs.svelte'
+    import Menu from './components/menu/Menu.svelte';
+
+	//import Tabs from './components/tabs/Tabs.svelte'
     
 
 
@@ -152,6 +155,24 @@ We invite you to come and experience the delicious flavors of Banana Bistro. Whe
 />
 
 <section class="mt-20">
-	<Tabs list={menus} buttonStyle={'filterBtn'}/>
+	<!-- <Tabs list={menus} buttonStyle={'filterBtn'}/> -->
+    <Tabs style="pill" defaultClass='items-center justify-center w-full flex' >
+        {#each menus as menu, index}
+            {#if index == 0}
+                <TabItem open>
+                    <span slot="title">{menu.title}</span>
+                    <Menu sectionTitle={menu.title} menuItems={menu.content} />
+                </TabItem>
+            {:else}
+                <TabItem>
+                    <span slot="title">{menu.title}</span>
+                    <Menu sectionTitle={menu.title} menuItems={menu.content} />
+                </TabItem>
+
+            {/if}
+            
+        {/each}
+    </Tabs>
+
 </section>
 
