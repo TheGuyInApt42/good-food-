@@ -7,6 +7,9 @@
 
 	//NOTE: https://www.quay.com.au/ 
 
+	const today = new Date().getDay();
+	console.log(today);
+
 	const select = (selector, scope = document) => {
 		return scope.querySelector(selector)
 	}
@@ -181,6 +184,10 @@
 		for (let i = 0; i < sections.length; i++){
 			sections[i].dataset.index = i
 		}
+
+		let todayHours = document.querySelector(`[data-id='${today}']`)
+		let highlightedDay = 'font-bold text-white'.split(' ')
+		todayHours.classList.add(...highlightedDay)
 		
 		
 	})
