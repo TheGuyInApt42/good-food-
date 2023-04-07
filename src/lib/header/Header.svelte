@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import logo from './svelte-logo.svg';
 	import l from './bananatastic.png'
+	import Headroom from './components/Headroom.svelte';
 
 	let menu;
 	let mobile = false;
@@ -33,53 +34,68 @@
 
 </script>
 
+<Headroom>
+	<header class="w-full h-16 drop-shadow-lg bg-black">
+		<div class="container lg:px-4 md:px-0 h-full mx-auto flex justify-between items-center px-4">
+			<!-- Logo Here -->
+			<a class="text-yellow-400 text-xl font-bold italic md:z-0 z-50" href="/">GOOD<span
+					class="text-white">FOOD</span></a>
 
-<header class="w-full h-16 drop-shadow-lg bg-black">
-	<div class="container lg:px-4 md:px-0 h-full mx-auto flex justify-between items-center px-4">
-		<!-- Logo Here -->
-		<a class="text-yellow-400 text-xl font-bold italic md:z-0 z-50" href="/">GOOD<span
-				class="text-white">FOOD</span></a>
+			<nav data-sveltekit-prefetch>
 
-		<nav data-sveltekit-prefetch>
+				<!-- Menu links here -->
+				<ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-40
+					md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
 
-			<!-- Menu links here -->
-			<ul id="menu" class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-40
-				md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+					<li class="md:hidden z-90 fixed top-4 right-6">
+						<a href="#" class="text-right text-white text-4xl"
+							on:click={toggleMenu}>&times;</a>
+					</li>
 
-				<li class="md:hidden z-90 fixed top-4 right-6">
-					<a href="#" class="text-right text-white text-4xl"
-						on:click={toggleMenu}>&times;</a>
-				</li>
+					<li class:active={$page.url.pathname === '/'}>
+						<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/" on:click={toggleMenu}>Home</a>
+					</li>
+					<li class:active={$page.url.pathname === '/about'}>
+						<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/about" on:click={toggleMenu}>About</a>
+					</li>
+					<li class:active={$page.url.pathname === '/menu'}>
+						<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/menu" on:click={toggleMenu}>Menu</a>
+					</li>
 
-				<li class:active={$page.url.pathname === '/'}>
-					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/" on:click={toggleMenu}>Home</a>
-				</li>
-				<li class:active={$page.url.pathname === '/about'}>
-					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/about" on:click={toggleMenu}>About</a>
-				</li>
-				<li class:active={$page.url.pathname === '/menu'}>
-					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/menu" on:click={toggleMenu}>Menu</a>
-				</li>
+					<li class:active={$page.url.pathname === '/gallery'}>
+						<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/gallery" on:click={toggleMenu}>Gallery</a>
+					</li>
+					<li class:active={$page.url.pathname === '#contact'}>
+						<a class="text-white opacity-70 hover:opacity-100 duration-300" href="#contact" on:click={toggleMenu}>Contact</a>
+					</li>
+				</ul>
 
-				<li class:active={$page.url.pathname === '/gallery'}>
-					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="/gallery" on:click={toggleMenu}>Gallery</a>
-				</li>
-				<li class:active={$page.url.pathname === '#contact'}>
-					<a class="text-white opacity-70 hover:opacity-100 duration-300" href="#contact" on:click={toggleMenu}>Contact</a>
-				</li>
-			</ul>
+			</nav>
 
-		</nav>
+			<!-- This is used to open the menu on mobile devices -->
+			<div class="flex items-center md:hidden">
+				<button class="text-white text-4xl font-bold opacity-70 hover:opacity-100 duration-300 fixed top-4 right-6"
+					on:click={toggleMenu}>
+					&#9776;
+				</button>
+			</div>
 
-		<!-- This is used to open the menu on mobile devices -->
-		<div class="flex items-center md:hidden">
-			<button class="text-white text-4xl font-bold opacity-70 hover:opacity-100 duration-300 fixed top-4 right-6"
-				on:click={toggleMenu}>
-				&#9776;
-			</button>
-		</div>
+	</header>
+</Headroom>
 
-</header>
+<style>
+	@media screen and (max-width: 768px){
+		#menu{
+			padding-top: 8rem;
+			
+		}
+
+		#menu li{
+			font-size: 24px;
+			color: white;
+		}
+	}
+</style>
 
 <!-- <header>
 	<div class="corner">

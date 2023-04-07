@@ -219,4 +219,11 @@
 		
 	}
 
+
+	@media screen and (max-width: 768px){
+		main{
+			z-index: -1;
+		}
+	}
+
 </style>
