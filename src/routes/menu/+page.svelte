@@ -129,6 +129,8 @@
         }
     ]
 
+    const headerBtn = 'text-2xl px-5'
+
 	// NOTE: https://beyondsushi.com/#menu
 	//NOTE: https://www.bengaltigerindianfood.com/
 	//NOTE: https://www.coloniaverdenyc.com/menus
@@ -160,12 +162,12 @@ We invite you to come and experience the delicious flavors of Banana Bistro. Whe
         {#each menus as menu, index}
             {#if index == 0}
                 <TabItem open>
-                    <span slot="title">{menu.title}</span>
+                    <span slot="title" class={headerBtn}>{menu.title}</span>
                     <Menu sectionTitle={menu.title} menuItems={menu.content} />
                 </TabItem>
             {:else}
                 <TabItem>
-                    <span slot="title">{menu.title}</span>
+                    <span slot="title" class={headerBtn}>{menu.title}</span>
                     <Menu sectionTitle={menu.title} menuItems={menu.content} />
                 </TabItem>
 
@@ -175,4 +177,3 @@ We invite you to come and experience the delicious flavors of Banana Bistro. Whe
     </Tabs>
 
 </section>
-
