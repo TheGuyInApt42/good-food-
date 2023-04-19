@@ -129,6 +129,8 @@
         }
     ]
 
+    const headerBtn = 'text-2xl px-5'
+
 	// NOTE: https://beyondsushi.com/#menu
 	//NOTE: https://www.bengaltigerindianfood.com/
 	//NOTE: https://www.coloniaverdenyc.com/menus
@@ -142,7 +144,9 @@
 
 <TwoCol 
 	title='Menu Description' 
-	textHeader='Our Food' 
+	textHeader='Menu' 
+    btnText='View Menu'
+	link='#food'
 	text='
 Welcome to Banana Bistro, the premier restaurant specializing in banana dishes! We are a family-owned and operated restaurant located in the heart of the city.
 
@@ -154,18 +158,18 @@ We invite you to come and experience the delicious flavors of Banana Bistro. Whe
 	bgImage='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
 />
 
-<section class="mt-20">
+<section id="food" class="mt-20">
 	<!-- <Tabs list={menus} buttonStyle={'filterBtn'}/> -->
     <Tabs style="pill" defaultClass='items-center justify-center w-full flex' contentClass='p-4 rounded-lg mt-4' >
         {#each menus as menu, index}
             {#if index == 0}
                 <TabItem open>
-                    <span slot="title">{menu.title}</span>
+                    <span slot="title" class={headerBtn}>{menu.title}</span>
                     <Menu sectionTitle={menu.title} menuItems={menu.content} />
                 </TabItem>
             {:else}
                 <TabItem>
-                    <span slot="title">{menu.title}</span>
+                    <span slot="title" class={headerBtn}>{menu.title}</span>
                     <Menu sectionTitle={menu.title} menuItems={menu.content} />
                 </TabItem>
 

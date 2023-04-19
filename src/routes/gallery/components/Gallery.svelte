@@ -9,7 +9,7 @@
 	<ul class="image-gallery relative -z-10 md:static md:z-0">
 		{#each images as image}
 			<li>
-				<img src={image.src} alt={image.alt} />
+				<img src={image.src} alt={image.title} />
 				<div class="overlay"><span>{image.title}</span></div>
 			</li>
 		{/each}
