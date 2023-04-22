@@ -11,6 +11,13 @@
 		keywords: ['about', 'about good food', 'good food story'],
 		content : 'About Good Food'
 	};
+
+	const aboutText = 
+		`<p>Welcome to Good Food, where we believe that the key to a happy life lies in sharing scrumptious meals with the people you love. Established in 2023, our restaurant has been serving up a delightful array of dishes that tantalize taste buds and create lasting memories. Nestled in the heart of Mount Vernon, Good Food is a culinary haven for food enthusiasts who crave exceptional flavors and a warm, inviting atmosphere.</p>
+		<br>
+		<p>Our passion for creating unforgettable dining experiences is rooted in our commitment to using only the freshest, locally-sourced ingredients. Our talented team of chefs, led by lifelong food lover Ralph Gorham, meticulously crafts each dish to showcase the natural flavors and textures that make our cuisine truly unique. From our mouth-watering appetizers to our delectable desserts, every bite at Good Food is a celebration of culinary artistry.</p>
+		<br>
+		<p>Our warm and welcoming staff is dedicated to providing exceptional service, ensuring that every guest feels like a cherished part of the Good Food family. From the moment you step through our doors, you'll be greeted with genuine smiles and a commitment to making your dining experience truly special.</p>`
 </script>
 
 <!-- Start: Header Tag -->
@@ -21,13 +28,6 @@
 <TwoCol 
 	title='About' 
 	textHeader='About Us' 
-	text='
-Welcome to Banana Bistro, the premier restaurant specializing in banana dishes! We are a family-owned and operated restaurant located in the heart of the city.
-
-At Banana Bistro, we believe that bananas are a versatile and delicious ingredient that can be used in a variety of dishes. Our menu features a wide selection of banana-based dishes, from savory entrees to sweet desserts. We also offer a selection of vegan and vegetarian options.
-
-Our chefs are passionate about creating unique and flavorful dishes that will tantalize your taste buds. We use only the freshest ingredients and strive to provide a memorable dining experience.
-
-We invite you to come and experience the delicious flavors of Banana Bistro. Whether you’re looking for a quick lunch or a romantic dinner, we have something for everyone. We look forward to serving you soon!' 
-	bgImage='https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80'
+	text={aboutText}
+	bgImage='https://source.unsplash.com/nA6Xhnq2Od8/'
 />

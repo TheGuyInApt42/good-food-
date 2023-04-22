@@ -39,10 +39,10 @@
 </style>
 
 <section id={`${title}-section`} class="flex h-[900px] w-screen">
-    <div class="text-container {imageOnRight ? 'order-1' : 'order-2'} lg:h-screen flex justify-center items-center flex-col lg:w-1/2 py-8 lg:py-0">
+    <div class="text-container {imageOnRight ? 'order-1' : 'order-2'} flex justify-center items-center flex-col lg:w-1/2 py-8 lg:py-0">
         <div class="text-content w-[85%]">
             <h2 class="text-[50px]">{textHeader}</h2>
-            <p class="mb-2">{text}</p>
+            <div class="mb-2">{@html text}</div>
             {#if btnText}
                 <a class="mt-6 px-10 py-2 border border-black" href={link}>{btnText}</a>
             {/if}

@@ -129,6 +129,12 @@
         }
     ]
 
+    const menuText = `
+        <p>At Good Food, we pride ourselves on offering a diverse menu that caters to a variety of tastes and dietary preferences. Whether you're a meat lover, a vegetarian, or a vegan, our extensive selection of dishes ensures that there's something for everyone to enjoy. Our ever-evolving menu is inspired by global flavors and seasonal ingredients, ensuring that each visit to Good Food is a new and exciting gastronomic adventure.</p>
+		<br>
+		<p>At Good Food, we believe that great food has the power to bring people together and create lasting connections. We invite you to join us for a meal that will not only satisfy your hunger but also nourish your soul. So gather your friends, family, and loved ones, and let us take you on a culinary journey that you'll never forget. Welcome to Good Food, where every meal is a celebration of life, love, and the simple joy of sharing good food with good company.</p>`
+
+
     const headerBtn = 'text-2xl px-5'
 
 	// NOTE: https://beyondsushi.com/#menu
@@ -147,15 +153,8 @@
 	textHeader='Menu' 
     btnText='View Menu'
 	link='#food'
-	text='
-Welcome to Banana Bistro, the premier restaurant specializing in banana dishes! We are a family-owned and operated restaurant located in the heart of the city.
-
-At Banana Bistro, we believe that bananas are a versatile and delicious ingredient that can be used in a variety of dishes. Our menu features a wide selection of banana-based dishes, from savory entrees to sweet desserts. We also offer a selection of vegan and vegetarian options.
-
-Our chefs are passionate about creating unique and flavorful dishes that will tantalize your taste buds. We use only the freshest ingredients and strive to provide a memorable dining experience.
-
-We invite you to come and experience the delicious flavors of Banana Bistro. Whether you’re looking for a quick lunch or a romantic dinner, we have something for everyone. We look forward to serving you soon!' 
-	bgImage='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+	text={menuText}
+	bgImage='https://source.unsplash.com/vJsj-hgOEG0/'
 />
 
 <section id="food" class="mt-20">
