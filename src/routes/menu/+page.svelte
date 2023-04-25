@@ -154,6 +154,7 @@
     btnText='View Menu'
 	link='#food'
 	text={menuText}
+    showImageonMobile={true}
 	bgImage='https://source.unsplash.com/vJsj-hgOEG0/'
 />
 

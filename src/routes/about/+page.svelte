@@ -29,5 +29,6 @@
 	title='About' 
 	textHeader='About Us' 
 	text={aboutText}
+	showImageonMobile={true}
 	bgImage='https://source.unsplash.com/nA6Xhnq2Od8/'
 />

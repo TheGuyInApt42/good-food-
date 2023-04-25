@@ -31,6 +31,7 @@
 		Amanda Yallop.' 
 	btnText='View Menu'
 	link='/menu'
+	showImageonMobile={false}
 	bgImage='https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
 />
 
@@ -42,6 +43,7 @@
 	imageOnRight={false}
 	btnText='Learn More'
 	link='/about'
+	showImageonMobile={false}
 	bgImage='https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80'
 />
 
@@ -52,6 +54,7 @@
 		are the driving forces in his cooking. Peter leads the Quay team with a focus on excellence, innovation and hospitality.' 
 	imageOnRight={true}
 	btnText='Read More'
+	showImageonMobile={false}
 	bgImage='https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
 />
 
