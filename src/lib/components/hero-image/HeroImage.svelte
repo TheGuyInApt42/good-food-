@@ -1,5 +1,14 @@
 <script>
     export let text = '';
+	import { fly, fade } from "svelte/transition";
+	import { backOut } from 'svelte/easing'
+	import { onMount } from "svelte";
+
+	let animate = false
+
+	onMount(async () =>{
+		animate = true
+	})
 	
 
 </script>
@@ -7,19 +16,28 @@
 <div class="hero-image">
 	
     <div class="hero-text">
+		{#if animate}
+			 <!-- content here -->
+		
         <div class="container">
-            <div class="animate seven">
-                {#each text as letter}
-                    {#if letter == " "}
-                        &nbsp;
-                    {/if}
-                    <span>{letter}</span>
+			
+            <div class="overflow">
+                {#each text as letter, i}
+                    <span 
+						class="letter"
+						in:fly={{
+							y: 200, 
+							delay: 300 * i,
+							easing: backOut
+						}}
+					>{letter}</span>
                 {/each}
                     
               
         
-                </div>
+                </div> 
         </div>
+		{/if}
     </div>
   </div>
 
@@ -27,6 +45,24 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
 	@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+	    .overflow {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+
+	.letter {
+		padding: 0 0 200px;
+	font-family: 'Pacifico', cursive;
+	font-size: 2.5rem;
+	font-weight: 900;
+      display: inline-block;
+      margin: 0.2rem;
+      text-transform: uppercase;
+      text-shadow: 2px 0 10px hsl(0 0% 0% / 20%);
+    }
+
 
 
     /* The hero image */
@@ -55,7 +91,7 @@
   color: white;
 }
 	
-	.container {
+	/* .container {
 	width: 100%;
 	margin: auto;
 	font-weight: 900;
@@ -66,6 +102,16 @@
 	font-size: 14px;
 
 	word-wrap:break-word;
+} */
+
+@media screen and (max-width: 768px){
+	.hero-text{
+		width: 100%;
+	}
+
+	.container{
+		text-transform: none;
+	}
 }
 	
 	a, a:link, a:visited {

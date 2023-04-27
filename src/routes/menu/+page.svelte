@@ -160,15 +160,27 @@
 
 <section id="food" class="mt-20">
 	<!-- <Tabs list={menus} buttonStyle={'filterBtn'}/> -->
-    <Tabs style="pill" defaultClass='items-center justify-center w-full flex' contentClass='p-4 rounded-lg mt-4' >
+    <Tabs 
+        style="pill" 
+        defaultClass='items-center justify-center md:w-full flex' 
+        contentClass='p-4 mt-4' 
+        
+    >
         {#each menus as menu, index}
             {#if index == 0}
-                <TabItem open>
+                <TabItem 
+                    open 
+                    activeClasses='p-1 bg-blue-500 text-white rounded-lg md:p-2'
+                    inactiveClasses='px-4 bg-green'
+                >
                     <span slot="title" class={headerBtn}>{menu.title}</span>
                     <Menu sectionTitle={menu.title} menuItems={menu.content} />
                 </TabItem>
             {:else}
-                <TabItem>
+                <TabItem 
+                    activeClasses='bg-blue-500 text-white font-bold rounded-lg p-2'
+                    inactiveClasses='px-6 bg-green'
+                >
                     <span slot="title" class={headerBtn}>{menu.title}</span>
                     <Menu sectionTitle={menu.title} menuItems={menu.content} />
                 </TabItem>
