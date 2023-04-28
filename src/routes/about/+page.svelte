@@ -26,7 +26,7 @@
 
 
 <TwoCol 
-	title='About' 
+	title='about' 
 	textHeader='About Us' 
 	text={aboutText}
 	showImageonMobile={true}

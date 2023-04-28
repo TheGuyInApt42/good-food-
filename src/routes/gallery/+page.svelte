@@ -22,6 +22,6 @@
 <!-- End: Header Tag -->
 
 <section class="py-12">
-	<Gallery title1={'Responsive'} title2={'Image Gallery'} images={data.images}/>
+	<Gallery title1={'Good'} title2={'Food Items'} images={data.images}/>
 </section>
 

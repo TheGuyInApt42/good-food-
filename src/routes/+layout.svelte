@@ -206,7 +206,10 @@
 
 
 <style>
+	@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+	
 	main {
+		font-family: 'Lato';
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -220,10 +223,10 @@
 	}
 
 
-	@media screen and (max-width: 768px){
+	/* @media screen and (max-width: 768px){
 		main{
 			z-index: -1;
 		}
-	}
+	} */
 
 </style>

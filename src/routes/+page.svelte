@@ -42,7 +42,7 @@
 		are the driving forces in his cooking. Peter leads the Quay team with a focus on excellence, innovation and hospitality.' 
 	imageOnRight={false}
 	btnText='Learn More'
-	link='/about'
+	link='/about#about-section'
 	showImageonMobile={false}
 	bgImage='https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80'
 />

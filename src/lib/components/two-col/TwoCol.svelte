@@ -70,6 +70,10 @@
 </section>
 
 <style>
+    a{
+    
+        cursor: pointer;
+    }
 	.image {
 		grid-area: image;
 		/* background: url("https://www.washingtonpost.com/resizer/ZUrlI2mJsVl7uHWmmyFKiJJ7Y7Y=/1440x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FDFHHRVMNQ2JXFMPYNW3B3IYY4.jpg");
