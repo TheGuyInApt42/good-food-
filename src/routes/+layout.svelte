@@ -1,232 +1,140 @@
 <script>
 	import { onMount } from 'svelte';
 	import Header from '$lib/header/Header.svelte';
-	import  ContactFooter from '$lib/components/contact-footer/ContactFooter.svelte'
-	
+	import ContactFooter from '$lib/components/contact-footer/ContactFooter.svelte';
+	import { debounce } from 'lodash';
+
 	import '../app.css';
 
-	//NOTE: https://www.quay.com.au/ 
+	// Utility functions
+	const select = (selector, scope = document) => scope.querySelector(selector);
+	const addClass = (ele, cls) => ele.classList.add(...(Array.isArray(cls) ? cls : [cls]));
+	const removeClass = (ele, cls) => ele.classList.remove(...(Array.isArray(cls) ? cls : [cls]));
 
-	const today = new Date().getDay();
-	console.log(today);
+	// Constants
+	const TODAY = new Date().getDay();
+	const HIGHLIGHT_CLASSES = ['font-bold', 'text-white'];
 
-	const select = (selector, scope = document) => {
-		return scope.querySelector(selector)
-	}
+	// Configuration
+	const ADDRESS = `
+  <p>343 S 2nd Ave</p>
+  <p>Mount Vernon, NY 10550</p>            
+  <a href="tel:9144194033">Tel: (914)419-4033</a>
+`;
 
-	let address = `<p>343 S 2nd Ave</p>
-                    <p>Mount Vernon, NY 10550</p>            
-                    <a href="tel:9144194033">Tel: (914)419-4033</a>`
+	const HOURS = `
+  <p data-id="1">Mon. 	11:30am – 2:45pm & 5pm – 10pm</p>
+  <p data-id="2">Tue. 	11:30am – 2:45pm & 5pm – 10pm</p>
+  <p data-id="3">Wed. 	11:30am – 2:45pm & 5pm – 10pm</p>
+  <p data-id="4">Thu. 	11:30am – 2:45pm & 5pm – 10pm</p>
+  <p data-id="5">Fri. 	11:30am – 2:45pm & 5pm – 10pm</p>
+  <p data-id="6">Sat. 	12pm – 10pm</p>
+  <p data-id="0">Sun. 	12pm – 10pm</p>
+  <p>Holidays:   11:30am – 10pm</p>
+`;
 
+	// Navigation functions
+	function moveDown() {
+		const current = select('section.active');
+		const index = current.dataset.index;
+		const next = select(`section[data-index='${parseInt(index) + 1}']`);
 
-
-	let hours = `<p data-id="1">Mon. 	11:30am – 2:45pm & 5pm – 10pm</p>
-        <p data-id="2">Tue. 	11:30am – 2:45pm & 5pm – 10pm</p>
-            <p data-id="3">Wed. 	11:30am – 2:45pm & 5pm – 10pm</p>
-                <p data-id="4">Thu. 	11:30am – 2:45pm & 5pm – 10pm</p>
-                    <p data-id="5">Fri. 	11:30am – 2:45pm & 5pm – 10pm</p>
-                        <p data-id="6">Sat. 	12pm – 10pm</p>
-                            <p data-id="0">Sun. 	12pm – 10pm</p>
-
-                                <p>Holidays:   11:30am – 10pm</p>`
-
-
-	let start = 0
-	let move = 0
-	let pos = 0
-
-	let current, index, next;
-	
-
-	const addClass = (ele, cls) =>{
-		ele.classList.add(cls)
-	}
-
-	const removeClass = (ele, cls) =>{
-		ele.classList.remove(cls)
-	}
-
-	function whichTransitionEvent(){
-		let t;
-		let el = document.createElement('fakeelement');
-		let transitions = {
-		'transition':'transitionend',
-		'OTransition':'oTransitionEnd',
-		'MozTransition':'transitionend',
-		'WebkitTransition':'webkitTransitionEnd'
-		}
-
-		for(t in transitions){
-			console.log(t);
-			if( el.style[t] !== undefined ){
-				return transitions[t];
-			}
+		if (next) {
+			smoothScrollToSection(next);
+			updateActiveSection(current, next);
 		}
 	}
 
+	function moveUp() {
+		const current = select('section.active');
+		const index = current.dataset.index;
+		const next = select(`section[data-index='${parseInt(index) - 1}']`);
 
-	function transformPage(el2, pos, index, next_el){
-		console.log('transforming');
-		let animationTime = 1000;
-		let easing = 'ease'
-		let transformCSS = `
-		-webkit-transform: translate3d(0, ${pos}%, 0); -webkit-transition: -webkit-transform ${animationTime}ms ${easing}; 
-		-moz-transform: translate3d(0, ${pos}%, 0); -moz-transition: -moz-transform ${animationTime}ms ${easing}; 
-		-ms-transform: translate3d(0, ${pos}%, 0); -ms-transition: -ms-transform ${animationTime}ms ${easing}; 
-		transform: translate3d(0, ${pos}%, 0); transition: transform ${animationTime}ms ${easing};`;
-    
-		console.log(transformCSS);
-		el2.style.cssText = transformCSS;
-		
-		console.log(el2);
-		
-		var transitionEnd = whichTransitionEvent();
-		el2.addEventListener(transitionEnd, endAnimation, false);
-		
-		function endAnimation() {
-		
-			el2.removeEventListener(transitionEnd, endAnimation)
+		if (next) {
+			smoothScrollToSection(next);
+			updateActiveSection(current, next);
 		}
 	}
 
+	function smoothScrollToSection(section) {
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-
-
-
-	const moveDown = () =>{
-		current = select('section.active')
-		index = current.dataset.index
-		next = select(`section[data-index='${parseInt(index) + 1}']`)
-		//console.log(next);
-		let sections = document.querySelectorAll('section')
-		
-
-		if (next){
-			next.scrollIntoView({
-				behavior: 'smooth'
-			})  
-			pos = (index * 100) * -1;
-			addClass(next, 'active')
-		
-			removeClass(current, 'active')
-		}
-		else{
-			//scroll to top
-			/* current = document.querySelector(`section[data-index='0']`)
-			pos = 0
-			current.scrollIntoView({
-				behavior: 'smooth'
-			})  
-			for (let i = 0; i < sections.length; i++){
-				removeClass(sections[i], 'active')
-			}
-			addClass(current, 'active') */
-			
-		}
-		let next_index = next.dataset.index;
-
-
-		//transformPage(current, pos, next_index, next);
+		section.scrollIntoView({
+			behavior: prefersReducedMotion ? 'auto' : 'smooth'
+		});
 	}
 
-	const moveUp = () =>{
-		current = select('section.active')
-		index = current.dataset.index
-		next = select(`section[data-index='${parseInt(index) - 1}']`)
-
-		let sections = document.querySelectorAll('section')
-		let total = sections.length
-
-		if (next){
-			next.scrollIntoView({
-				behavior: 'smooth'
-			}) 
-			
-			addClass(next, 'active')
-			removeClass(current, 'active')
-		}
-		else{
-			/* //scroll to top
-			current = document.querySelector(`section[data-index='0']`)
-			current.scrollIntoView({
-				behavior: 'smooth'
-			})
-			for (let i = 0; i < sections.length; i++){
-				removeClass(sections[i], 'active')
-			}
-			addClass(current, 'active') */
-			
-		}
-
-		let next_index = next.dataset.index;
-
-
-		//transformPage(current, pos, next_index, next);
+	function updateActiveSection(current, next) {
+		addClass(next, 'active');
+		removeClass(current, 'active');
 	}
 
-	function autoscroll(event){
-		let delta = event.deltaY
-		console.log('delta is ' + delta);
-
+	// Event handlers
+	const handleScroll = debounce((event) => {
+		const delta = event.deltaY;
 		if (delta < 0) {
-			moveUp()
+			moveUp();
 		} else {
-			moveDown()
-		} 
-	}
-	
-
-	
-
-	onMount(async() =>{
-		let sections = document.querySelectorAll('section')
-
-		for (let i = 0; i < sections.length; i++){
-			sections[i].dataset.index = i
+			moveDown();
 		}
+	}, 100);
 
-		let todayHours = document.querySelector(`[data-id='${today}']`)
-		let highlightedDay = 'font-bold text-white'.split(' ')
-		todayHours.classList.add(...highlightedDay)
-		
-		
-	})
-	
+	// Touch handling
+	let touchStart = 0;
+	let touchEnd = 0;
+
+	function handleTouchStart(event) {
+		touchStart = event.changedTouches[0].screenY;
+	}
+
+	function handleTouchEnd(event) {
+		touchEnd = event.changedTouches[0].screenY;
+		if (touchStart - touchEnd > 50) {
+			moveDown();
+		} else if (touchEnd - touchStart > 50) {
+			moveUp();
+		}
+	}
+
+	onMount(() => {
+		const sections = document.querySelectorAll('section');
+		sections.forEach((section, index) => {
+			section.dataset.index = index;
+		});
+
+		const todayHours = select(`[data-id='${TODAY}']`);
+		addClass(todayHours, HIGHLIGHT_CLASSES);
+
+		// Add touch event listeners
+		document.addEventListener('touchstart', handleTouchStart);
+		document.addEventListener('touchend', handleTouchEnd);
+
+		return () => {
+			document.removeEventListener('touchstart', handleTouchStart);
+			document.removeEventListener('touchend', handleTouchEnd);
+		};
+	});
 </script>
-
 
 <div class="flex flex-col scroll-smooth">
 	<Header />
-	<main on:wheel={e=> autoscroll(e)}>
+	<main on:wheel={handleScroll}>
 		<slot />
 	</main>
-
-	<ContactFooter address={address} hours={hours}/>
+	<ContactFooter address={ADDRESS} hours={HOURS} />
 </div>
 
-
 <style>
-	@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
-	
+	@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap');
+
 	main {
-		font-family: 'Lato';
+		font-family: 'Lato', sans-serif;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-	
 		width: 100%;
 		height: 100vh;
 		margin: 0 auto;
 		box-sizing: border-box;
-		
-		
 	}
-
-
-	/* @media screen and (max-width: 768px){
-		main{
-			z-index: -1;
-		}
-	} */
-
 </style>
